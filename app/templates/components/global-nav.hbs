@@ -1,0 +1,8 @@
+<nav class="{{if this.isTabbed 'nav-extended' ''}}">
+	<div class="nav-wrapper">
+		{{global-nav-links}}
+
+		{{!-- these tabs are optionally rendered if the page needs them --}}
+		{{yield}}
+	</div>
+</nav>
