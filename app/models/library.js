@@ -6,9 +6,17 @@ const { attr, hasMany } = DS;
  * Tape libraries are collections of drives and loaders, usually contained in
  * the same unit. This mirrors a iolib_library_t structure.
  */
-export default DS.Model.extend({
+var Library = DS.Model.extend({
 	name: attr('string'),
 
 	drives: hasMany('drive'),
 	loaders: hasMany('loader'),
 });
+
+Library.reopenClass({
+	FIXTURES: [
+
+	]
+});
+
+export default Library;

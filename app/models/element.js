@@ -7,7 +7,7 @@ const { attr, belongsTo } = DS;
  * ever receives storage elements (slots) and portals (mailslots); drives are
  * implied by the Drive object, and we don't care about pickers.
  */
-export default DS.Model.extend({
+var LoaderElement = DS.Model.extend({
     // Logical address in the loader
     index: attr('number'),
 
@@ -27,3 +27,11 @@ export default DS.Model.extend({
     // Loader in which this element exists
     loader: belongsTo('loader'),
 });
+
+LoaderElement.reopenClass({
+    FIXTURES: [
+
+    ]
+});
+
+export default LoaderElement;
