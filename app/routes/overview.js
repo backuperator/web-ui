@@ -5,8 +5,8 @@ export default Ember.Route.extend({
 		// Render default outlet
 		this.render();
 		// render nav tabs
-		this.render("overview-tabs", {
-			outlet: "navTabs",
+		this.render("overview-nav", {
+			outlet: "nav",
 			into: "application"
 		});
 	}

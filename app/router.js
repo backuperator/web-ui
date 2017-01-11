@@ -8,13 +8,13 @@ const Router = Ember.Router.extend({
     didTransition: function(info) {
         // Once everything is rendered, run Materialize initializers
         Ember.run.schedule('afterRender', this, function() {
-            $('ul.tabs').tabs();
-            $('.collapsible').collapsible();
-            $('.modal').modal();
-            $('.tooltipped').tooltip({
+            Ember.$('ul.tabs').tabs();
+            Ember.$('.collapsible').collapsible();
+            Ember.$('.modal').modal();
+            Ember.$('.tooltipped').tooltip({
                 delay: 50
             });
-            $('.dropdown-button').dropdown({
+            Ember.$('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
                 constrain_width: false,
