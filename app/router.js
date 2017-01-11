@@ -31,7 +31,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('overview');
+  this.route('overview', { path: '/' });
   this.route('backups');
   this.route('jobs');
   this.route('config');
