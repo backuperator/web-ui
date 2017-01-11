@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+	titleToken: "Backups",
+
 	renderTemplate: function() {
 		// Render default outlet
 		this.render();
