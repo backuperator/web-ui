@@ -11,19 +11,23 @@
                         <div class="card-content">
                             <span class="card-title">{{library.name}}</span>
 
-                            {{library}}
-
                             <h3>Drives</h3>
-                            {{#each this.drives as |drive|}}
-                            BOOP DRIVE
+                            {{#each library.drives as |drive|}}
+                            <div class="drive-info">
+                                <h4>{{drive.name}}</h4>
+                                <p><span>Device File:</span> <code>{{drive.file}}</code></p>
+                            </div>
                             {{else}}
                             <p class="info">This library has no configured drives. If this is unexpected, check your configuration.</p>
                             {{/each}}
 
 
                             <h3>Loaders</h3>
-                            {{#each this.loaders as |loader|}}
-
+                            {{#each library.loaders as |loader|}}
+                            <div class="loader-info">
+                                <h4>{{loader.name}}</h4>
+                                <p><span>Device File:</span> <code>{{loader.file}}</code></p>
+                            </div>
                             {{else}}
                             <p class="info">This library has no configured loaders. If this is unexpected, check your configuration.</p>
                             {{/each}}

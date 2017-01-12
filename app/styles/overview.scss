@@ -3,6 +3,25 @@
         font-size: 1.5em;
         margin-bottom: 0.33em;
     }
+    .drive-info, .loader-info {
+        padding-left: 0.66em;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid color("grey", "lighten-4");
+        }
+
+        h4 {
+            font-size: 1.125em;
+            margin-bottom: 0.25em;
+        }
+        h4:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0 0 0.2em 0;
+        }
+    }
 
     h3:first-of-type {
         margin-top: 0;
