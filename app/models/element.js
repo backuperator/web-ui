@@ -25,7 +25,7 @@ var LoaderElement = DS.Model.extend({
     tag: attr('string'),
 
     // Loader in which this element exists
-    loader: belongsTo('loader'),
+    loader: belongsTo('loader', { async: true }),
 });
 
 LoaderElement.reopenClass({

@@ -4,3 +4,44 @@ $primary-color: #500000;
 $roboto-font-path: "/assets/fonts/roboto/";
 
 @import "bower_components/materialize/sass/materialize.scss";
+
+// global
+.container {
+    padding-top: 1rem;
+}
+
+.loading-slider > span {
+    background-color: #fff;
+}
+
+// alert boxes
+.alert-box {
+    @extend .card-panel;
+
+    p {
+        margin: 0;
+    }
+
+    strong {
+        display: block;
+        font-size: 1.33em;
+    }
+
+    &.error {
+        @extend .red;
+        @extend .white-text;
+    }
+
+    &.warning {
+        @extend .orange;
+        @extend .white-text;
+    }
+
+    &.info {
+        @extend .blue;
+        @extend .white-text;
+    }
+}
+
+// Various templates' styles
+@import "overview.scss"

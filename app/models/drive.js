@@ -9,13 +9,7 @@ var Drive = DS.Model.extend({
     name: attr('string'),
     file: attr('string'),
 
-    library: belongsTo('library'),
-});
-
-Drive.reopenClass({
-    FIXTURES: [
-
-    ]
+    library: belongsTo('library', { async: true }),
 });
 
 export default Drive;

@@ -9,14 +9,8 @@ var Loader = DS.Model.extend({
     name: attr('string'),
     file: attr('string'),
 
-    elements: hasMany('element'),
-    library: belongsTo('library'),
-});
-
-Loader.reopenClass({
-    FIXTURES: [
-
-    ]
+    elements: hasMany('element', { async: true }),
+    library: belongsTo('library', { async: true }),
 });
 
 export default Loader;

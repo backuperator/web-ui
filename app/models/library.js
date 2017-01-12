@@ -9,14 +9,8 @@ const { attr, hasMany } = DS;
 var Library = DS.Model.extend({
 	name: attr('string'),
 
-	drives: hasMany('drive'),
-	loaders: hasMany('loader'),
-});
-
-Library.reopenClass({
-	FIXTURES: [
-
-	]
+	drives: hasMany('drive', { async: false }),
+	loaders: hasMany('loader', { async: false }),
 });
 
 export default Library;
