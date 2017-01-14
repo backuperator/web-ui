@@ -9,7 +9,7 @@ var Loader = DS.Model.extend({
     name: attr('string'),
     file: attr('string'),
 
-    elements: hasMany('element', { async: true }),
+    elements: hasMany('element', { async: false }),
     library: belongsTo('library', { async: true }),
 });
 

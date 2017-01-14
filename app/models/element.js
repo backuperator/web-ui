@@ -9,7 +9,7 @@ const { attr, belongsTo } = DS;
  */
 var LoaderElement = DS.Model.extend({
     // Logical address in the loader
-    index: attr('number'),
+    address: attr('number'),
 
     kind: attr('enum', {
         options: [
@@ -21,8 +21,8 @@ var LoaderElement = DS.Model.extend({
 
     // Set when there is nothing in the slot
     isEmpty: attr('boolean'),
-    // Volume tag
-    tag: attr('string'),
+    // Volume label
+    label: attr('string'),
 
     // Loader in which this element exists
     loader: belongsTo('loader', { async: true }),
