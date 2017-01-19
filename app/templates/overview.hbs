@@ -50,6 +50,55 @@
     </div>
 
     <div class="col s12" id="inventory">
-        <p>Display all inventory</p>
+		{{! One collapsible thing for each library's loader}}
+		<ul class="collapsible popout" data-collapsible="accordion">
+            {{#each this.model as |library|}}
+                {{#each library.loaders as |loader|}}
+        			<li>
+        				<div class="collapsible-header">{{library.name}}: {{loader.name}}</div>
+        				<div class="collapsible-body">
+                            {{! list some generic info about the loader}}
+        				    <table class="info-list">
+                                <tr>
+                                    <td>Number of Elements:</td><td>{{loader.elements.length}} ({{loader.storageElements.length}} storage, {{loader.otherElements.length}} other)</td>
+                                </tr>
+                                <tr>
+                                    <td>Device File:</td><td><code>{{loader.file}}</code></td>
+                                </tr>
+                            </table>
+
+                            {{! build a table of elements}}
+                            <div class="row inventory-slots">
+                                {{#each loader.elements as |element|}}
+                                    <div class="col m1 {{if element.isEmpty 'empty' 'full'}} {{if element.kind.isStorage 'storage'}} {{if element.kind.isPortal 'portal'}} {{if element.kind.isDrive 'drive'}} {{if element.kind.isTransport 'transport'}}">
+                                        <div class="address">{{element.address}}</div>
+                                        <div class="label">
+                                            {{#if element.label.length}}
+                                                {{element.label}}
+                                            {{else}}
+                                                {{#if element.isEmpty}}
+                                                    {{! Placeholder if the slot is empty}}
+                                                {{else}}
+                                                    N/A
+                                                {{/if}}
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+
+                            {{! Legend for inventory}}
+                            <div class="row inventory-legend">
+                                <div class="col offset-m2 m1 full">Full</div>
+                                <div class="col m1 storage">Storage</div>
+                                <div class="col m2 portal">Portal</div>
+                                <div class="col m2 transport">Transport</div>
+                                <div class="col m2 drive">Drive</div>
+                            </div>
+        				</div>
+        			</li>
+                {{/each}}
+            {{/each}}
+		</ul>
     </div>
 </div>

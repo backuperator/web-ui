@@ -14,7 +14,9 @@ var LoaderElement = DS.Model.extend({
     kind: attr('enum', {
         options: [
             'storage',
-            'portal'
+            'portal',
+            'drive',
+            'transport'
         ],
         defaultValue: 'storage'
     }),

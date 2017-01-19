@@ -33,3 +33,102 @@
         margin: 0;
     }
 }
+
+// inventory list
+.inventory-slots, .inventory-legend {
+    margin: 0.5em !important;
+
+    .col {
+        border: 1px solid #ccc;
+
+        // If the slot is full, draw a thicker top border
+        &.full {
+            border-top: 4px solid $primary-color;
+        }
+
+        // storage element
+        &.storage {
+            @extend .blue;
+        }
+        // portal element
+        &.portal {
+            @extend .green;
+        }
+        // drive
+        &.drive {
+            @extend .brown;
+            color: white;
+        }
+        // transport
+        &.transport {
+            @extend .amber;
+        }
+    }
+}
+
+.inventory-legend {
+    border: 1px solid color("grey", "lighten-4");
+    margin-top: 2em !important;
+
+    .col {
+        text-align: center;
+
+        padding: 0.33em;
+        margin: 0.5em 1em;
+    }
+}
+
+.inventory-slots {
+    margin: 0.5em !important;
+
+    .col {
+        height: 10em;
+
+        padding: 0.66em;
+
+        div.address {
+            text-align: center;
+            font-weight: bold;
+        }
+        div.label {
+            transform: rotate(90deg);
+	        transform-origin: center center 0;
+
+            text-align: center;
+            margin-top: 2.2em;
+
+            font-family: "Input Mono", monospace;
+        }
+    }
+}
+
+// info table
+table.info-list {
+    margin: 0.66em;
+
+    tbody {
+        border: 1px solid #f8f8f8;
+    }
+
+    tr {
+        td {
+            padding: 0.33em 0.66em;
+        }
+
+        // this is the "key"
+        td:first-child {
+            font-weight: bold;
+            text-align: right;
+
+            white-space: nowrap;
+
+            padding-left: 1.33em;
+            padding-right: 0;
+        }
+
+        // and the "value" field
+        td:last-child {
+            width: 100%;
+        }
+    }
+}
