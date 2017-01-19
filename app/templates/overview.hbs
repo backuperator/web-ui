@@ -15,7 +15,11 @@
                             {{#each library.drives as |drive|}}
                             <div class="drive-info">
                                 <h4>{{drive.name}}</h4>
-                                <p><span>Device File:</span> <code>{{drive.file}}</code></p>
+            				    <table class="info-list">
+                                    <tr>
+                                        <td>Device File:</td><td><code>{{loader.file}}</code></td>
+                                    </tr>
+                                </table>
                             </div>
                             {{else}}
                             <p class="info">This library has no configured drives. If this is unexpected, check your configuration.</p>
@@ -26,7 +30,14 @@
                             {{#each library.loaders as |loader|}}
                             <div class="loader-info">
                                 <h4>{{loader.name}}</h4>
-                                <p><span>Device File:</span> <code>{{loader.file}}</code></p>
+            				    <table class="info-list">
+                                    <tr>
+                                        <td>Device File:</td><td><code>{{loader.file}}</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Elements:</td><td>{{loader.elements.length}} ({{loader.storageElements.length}} storage, {{loader.otherElements.length}} other)</td>
+                                    </tr>
+                                </table>
                             </div>
                             {{else}}
                             <p class="info">This library has no configured loaders. If this is unexpected, check your configuration.</p>
@@ -60,10 +71,10 @@
                             {{! list some generic info about the loader}}
         				    <table class="info-list">
                                 <tr>
-                                    <td>Number of Elements:</td><td>{{loader.elements.length}} ({{loader.storageElements.length}} storage, {{loader.otherElements.length}} other)</td>
+                                    <td>Device File:</td><td><code>{{loader.file}}</code></td>
                                 </tr>
                                 <tr>
-                                    <td>Device File:</td><td><code>{{loader.file}}</code></td>
+                                    <td>Elements:</td><td>{{loader.elements.length}} ({{loader.storageElements.length}} storage, {{loader.otherElements.length}} other)</td>
                                 </tr>
                             </table>
 
@@ -74,7 +85,7 @@
                                         <div class="address">{{element.address}}</div>
                                         <div class="label">
                                             {{#if element.label.length}}
-                                                {{element.label}}
+                                                <code>{{element.label}}</code>
                                             {{else}}
                                                 {{#if element.isEmpty}}
                                                     {{! Placeholder if the slot is empty}}

@@ -21,6 +21,10 @@
         p {
             margin: 0 0 0.2em 0;
         }
+
+        table.info-list {
+            margin-left: 0;
+        }
     }
 
     h3:first-of-type {
@@ -37,6 +41,10 @@
 // inventory list
 .inventory-slots, .inventory-legend {
     margin: 0.5em !important;
+
+    code {
+        font-family: "Input Mono", monospace;
+    }
 
     .col {
         border: 1px solid #ccc;
@@ -95,9 +103,7 @@
 	        transform-origin: center center 0;
 
             text-align: center;
-            margin-top: 2.2em;
-
-            font-family: "Input Mono", monospace;
+            margin-top: 2.1em;
         }
     }
 }
