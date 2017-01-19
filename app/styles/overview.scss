@@ -46,31 +46,26 @@
         font-family: "Input Mono", monospace;
     }
 
-    .col {
-        border: 1px solid #ccc;
-
-        // If the slot is full, draw a thicker top border
-        &.full {
-            border-top: 4px solid $primary-color;
-        }
-
-        // storage element
-        &.storage {
-            @extend .blue;
-        }
-        // portal element
-        &.portal {
-            @extend .green;
-        }
-        // drive
-        &.drive {
-            @extend .brown;
-            color: white;
-        }
-        // transport
-        &.transport {
-            @extend .amber;
-        }
+    // If the slot is full, draw a thicker top border
+    .full {
+        border-top: 4px solid $primary-color !important;
+    }
+    // storage element
+    .storage {
+        @extend .blue;
+    }
+    // portal element
+    .portal {
+        @extend .green;
+    }
+    // drive
+    .drive {
+        @extend .brown;
+        color: white;
+    }
+    // transport
+    .transport {
+        @extend .amber;
     }
 }
 
@@ -79,10 +74,15 @@
     margin-top: 2em !important;
 
     .col {
-        text-align: center;
+        padding: 0.5em 1em;
 
-        padding: 0.33em;
-        margin: 0.5em 1em;
+        div {
+            text-align: center;
+            padding: 0.33em;
+            border: 0.5px solid color("grey", "lighten-2");
+
+            height: 25pt;
+        }
     }
 }
 
@@ -94,16 +94,18 @@
 
         padding: 0.66em;
 
+        border: 0.5px solid color("grey", "lighten-2");
+
         div.address {
             text-align: center;
             font-weight: bold;
         }
         div.label {
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
 	        transform-origin: center center 0;
 
             text-align: center;
-            margin-top: 2.1em;
+            margin-top: 2.33em;
         }
     }
 }
